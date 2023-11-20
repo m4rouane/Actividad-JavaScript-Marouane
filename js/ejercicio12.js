@@ -1,15 +1,14 @@
 /**
  * Ejercicio 12. Calculadora JavaScript
- * Autor: 
+ * Autor: Marouane Saidi Rahim
  */
 
 /**
  * Implementa el Menú 1: Sumar
- * @author: Coloca tu nombre aquí.
+ * @author: Marouane Saidi Rahim
  * @return suma
  */
-function menu1()
-{
+function menu1() {
     // Implemente la opción de la calculadora que permite sumar.
     console.info("Suma:");
     let sumando1=parseInt(prompt("Introduzca el prmier sumando: ",0));
@@ -21,60 +20,62 @@ function menu1()
 
 /**
  * Implementa el Menú 2: Restar
- * @author: Coloca tu nombre aquí.
+ * @author: Marouane Saidi Rahim
  * @return resta
  */
-function menu2()
-{
+function menu2() {
     // Implemente la opción de la calculadora que permite restar.
     console.info("Resta:");
     
     // IMPLEMENTA TU CÓDIGO AQUÍ
-    let minuendo=0;
-    let sustraendo=0;
-    let resultado=-1;
-
+    let minuendo=parseInt(prompt("Introduzca el minuendo: ",0));
+    let sustraendo=parseInt(prompt("Introduzca el sustraendo: ",0));
+    let resultado=minuendo-sustraendo;
     console.log("El resultado de la resta "+minuendo+" - "+sustraendo+" es "+resultado);
     return resultado;
 }
 /**
  * Implementa el Menú 3: Multiplicar
- * @author: Coloca tu nombre aquí.
+ * @author: Marouane Saidi Rahim
  * @return multiplicación
  */
-function menu3()
-{
+function menu3() {
     // Implemente la opción de la calculadora que permite multiplicar.
     console.info("Multiplica:");
     
     // IMPLEMENTA TU CODIGO AQUÍ 
-
-    return 3;
+    let m1=parseInt(prompt("Introduzca el minuendo: ",0));
+    let m2=parseInt(prompt("Introduzca el sustraendo: ",0));
+    let resultado=m1*m2;
+    console.log("El resultado de la multiplicación "+m1+" * "+m2+" es "+resultado);
+    return resultado;
 }
 
 /**
  * Implementa el Menú 4: Dividir
- * @author: Coloca tu nombre aquí.
+ * @author: Marouane Saidi Rahim
  * @return división
  */
-function menu4()
-{
+function menu4() {
     // Implemente la opción de la calculadora que permite dividir.
     console.info("Divide:");
     
     // IMPLEMENTA TU CÓDIGO AQUÍ
-
-    return 4;
+    let d1=parseInt(prompt("Introduzca el minuendo: ",0));
+    let d2=parseInt(prompt("Introduzca el sustraendo: ",0));
+    let resultado=d1/d2;
+    console.log("El resultado de la división "+d1+" / "+d2+" es "+resultado);
+    return resultado;
 
 }
 
 /**
  * Menú Aplicación Calculadora
- * @author: José Gaspar Sánchez García.
+ * @author: Marouane Saidi Rahim
  */
-function appMenu()
-{
+function appMenu() {
     let opcion=-1;
+    let resultado=0;
     do{
         console.log("\n*** CALCULADORA ***\n");
         console.log("Menú:");
@@ -85,15 +86,32 @@ function appMenu()
         console.log("0. Salir");
         opcion=parseInt(prompt("Introduzca opción: "));
 
-        switch(opcion)
-        {
-            case 1: {menu1();break;}
-            case 2: {menu2();break;}
-            case 3: {menu3();break;}
-            case 4: {menu4();break;}
-            case 0: {console.info("Saliendo aplicación calculadora.");break;}
-            default: {console.error("Error: Opción "+opcion+" incorrecta."); break;}
+        switch(opcion){
+            case 1:
+                resultado = menu1();
+                console.log("El resultado de la Suma es: " +resultado);
+                break;
+            case 2:
+                resultado = menu2();
+                console.log("El resultado de la Resta es: " +resultado);
+                break;
+            case 3:
+                resultado = menu3();
+                console.log("El resultado de la Multiplicación es: " +resultado);
+                break;
+            case 4:
+                resultado = menu4();
+                console.log("El resultado de la División es: " +resultado);
+                break;
+            case 0:
+                console.info("Saliendo aplicación calculadora.");
+                break;
+            default:
+                console.error("Error: Opción "+opcion+" incorrecta.");
+                break;
         }
 
     }while(opcion!=0)
+    console.log("El resultado de la operacion es: " +resultado)
 }
+appMenu();
