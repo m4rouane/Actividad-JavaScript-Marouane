@@ -10,7 +10,23 @@ function fibonacci(n)
     
     
     // ESCRIBE TU CÓDIGO AQUÍ
-    
+    if (n <= 0) {
+        return vector; // Si n es no positivo, retornamos un vector vacío
+    } else if (n === 1) {
+        vector.push(0); // Si n es 1, la serie es [0]
+        return vector;
+    } else if (n === 2) {
+        vector.push(0, 1); // Si n es 2, la serie es [0, 1]
+        return vector;
+    }
+
+    vector.push(0, 1); // Inicializamos el vector con los dos primeros elementos de la serie
+
+    for (let i = 2; i < n; i++) {
+        // Calculamos los siguientes elementos de la serie
+        let siguienteElemento = vector[i - 1] + vector[i - 2];
+        vector.push(siguienteElemento);
+    }
     
     return vector; // Retorno de la función
 }
