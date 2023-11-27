@@ -2,22 +2,29 @@
  * Calcula la media de los valores
  * @param {Array} v 
  * @returns media
- * @author: Autor/a
+ * @author: Marouane Saidi Rahim
  */
-function calcularMedia(v)
-{
-    // IMPLEMENTA TU CODIGO AQUÍ
-    return -1;
+function calcularMedia(v) {
+    let suma = 0;
+    for (i = 0; i < v.length; i++) {
+        suma = suma + v[i];
+    }
+    let media = suma / v.length;
+    return media;
 }
 /**
  * Obtiene la nota mínima
  * @param {Array} v 
  * @returns minima
  */
-function calcularMinimo(v)
-{
-    let minima=Number.MIN_VALUE; // <-- CORRIGE E IMPLEMENTA EL CODIGO
-    
+function calcularMinimo(v) {
+
+    let minima = Number.MAX_VALUE; // <-- CORRIGE E IMPLEMENTA EL CODIGO
+    for (i = 0; i < v.length; i++) {
+        if (v[i] < minima) {
+            minima = v[i];
+        }
+    }
     return minima;
 }
 /**
@@ -25,10 +32,13 @@ function calcularMinimo(v)
  * @param {Array} v 
  * @returns maxima
  */
-function calcularMaximo(v)
-{
-    let maxima=Number.MAX_VALUE; // <-- CORRIGE E IMPLEMENTA EL CODIGO
-
+function calcularMaximo(v) {
+    let maxima=Number.MIN_VALUE; // <-- CORRIGE E IMPLEMENTA EL CODIGO
+    for (i = 0; i < v.length; i++) {
+        if (v[i] > maxima) {
+            maxima = v[i];
+        }
+    }
     return maxima;
 }
 /**
@@ -36,12 +46,13 @@ function calcularMaximo(v)
  * @param {Array} v 
  * @returns aprobados: número de aprobados.
  */
-function contarAprobados(v)
-{
-    let aprobados=0;
-
-    // COMPLETA TU CODIGO
-
+function contarAprobados(v) {
+    let aprobados = 0;
+    for (let i = 0; i < v.length; i++) {
+        if (v[i] >= 5) {
+            aprobados = aprobados + 1;
+        }
+    }
     return aprobados;
 }
 /**
@@ -49,12 +60,13 @@ function contarAprobados(v)
  * @param {Array} v 
  * @returns suspensos: número de suspensos.
  */
-function contarSuspensos(v)
-{
-    let suspensos=0;
-    
-    // COMPLETA TU CODIGO
-
+function contarSuspensos(v){
+    let suspensos = 0;
+    for (let i = 0; i < v.length; i++) {
+        if (v[i] < 5) {
+            suspensos = suspensos + 1;
+        }
+    }
     return suspensos;
 }
 
