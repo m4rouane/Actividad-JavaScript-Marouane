@@ -4,61 +4,57 @@
  * @returns media
  * @author: Autor/a
  */
-function calcularMedia(v)
-{
-    // IMPLEMENTA TU CODIGO AQUÍ
-    return -1;
+function calcularMedia(v) {
+    if (v.length === 0) {
+        return undefined;
+    }
+
+    const notasRedondeadas = v.map(nota => Math.round(nota));
+    const suma = notasRedondeadas.reduce((acc, nota) => acc + nota, 0);
+    const media = suma / notasRedondeadas.length;
+
+    return media;
 }
 /**
  * Obtiene la nota mínima
  * @param {Array} v 
  * @returns minima
  */
-function calcularMinimo(v)
-{
-    let minima=Number.MIN_VALUE; // <-- CORRIGE E IMPLEMENTA EL CODIGO
-    
-    return minima;
+function calcularMinimo(v) {
+    if (v.length === 0) {
+        return undefined;
+    }
+
+    return v.reduce((min, nota) => Math.min(min, nota), v[0]);
 }
 /**
  * Obtiene la nota Máxima
  * @param {Array} v 
  * @returns maxima
  */
-function calcularMaximo(v)
-{
-    let maxima=Number.MAX_VALUE; // <-- CORRIGE E IMPLEMENTA EL CODIGO
+function calcularMaximo(v) {
+    if (v.length === 0) {
+        return undefined; 
+    }
 
-    return maxima;
+    return v.reduce((max, nota) => Math.max(max, nota), v[0]);
 }
 /**
  * Cuenta el número de aprobados
  * @param {Array} v 
  * @returns aprobados: número de aprobados.
  */
-function contarAprobados(v)
-{
-    let aprobados=0;
-
-    // COMPLETA TU CODIGO
-
-    return aprobados;
+function contarAprobados(v) {
+    return v.filter(nota => nota >= 5).length;
 }
 /**
  * Cuenta el número de suspensos
  * @param {Array} v 
  * @returns suspensos: número de suspensos.
  */
-function contarSuspensos(v)
-{
-    let suspensos=0;
-    
-    // COMPLETA TU CODIGO
-
-    return suspensos;
+function contarSuspensos(v) {
+    return v.filter(nota => nota < 5).length;
 }
-
-
 
 /**
  * Aplicacion principal Ejercicio14
